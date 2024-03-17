@@ -16,7 +16,7 @@ struct SplashView: View {
     var body: some View {
         
         if(isActive){
-            ContentView()
+            NavigationView()
         }
         else{
             VStack{
