@@ -12,6 +12,8 @@ struct ExploreView: View {
     @Binding var isDark : Bool
     
     var body: some View {
+        
+        
         ZStack{
             if(isDark){
                 Color.black
@@ -20,6 +22,14 @@ struct ExploreView: View {
                 Color.white
                     .ignoresSafeArea()
             }
+            
+            NavigationStack{
+                List(MockData.products){product in
+                    ProductListCell(product: product)
+                }
+                    .navigationTitle("Explore")
+            }
+            
         }
     }
 }
