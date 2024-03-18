@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ExploreView: View {
     
+    @StateObject var viewModel = ProductListViewModel()
     @Binding var isDark : Bool
+
+
     
     var body: some View {
         
@@ -24,14 +27,19 @@ struct ExploreView: View {
             }
             
             NavigationStack{
-                List(MockData.products){product in
+                List(viewModel.products){product in
                     ProductListCell(product: product)
                 }
                     .navigationTitle("Explore")
             }
+            .onAppear{
+                viewModel.getProducts()
+            }
             
         }
     }
+    
+  
 }
 
 #Preview {

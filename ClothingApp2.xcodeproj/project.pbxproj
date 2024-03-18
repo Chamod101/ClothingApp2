@@ -16,6 +16,9 @@
 		58A603DF2BA7366E00AACD31 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A603DE2BA7366E00AACD31 /* NavigationView.swift */; };
 		58A603E12BA7367000AACD31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A603E02BA7367000AACD31 /* Assets.xcassets */; };
 		58A603E42BA7367000AACD31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A603E32BA7367000AACD31 /* Preview Assets.xcassets */; };
+		58B0B7462BA8BD9D007C2E74 /* PError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0B7452BA8BD9D007C2E74 /* PError.swift */; };
+		58B0B7482BA8C8FF007C2E74 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0B7472BA8C8FF007C2E74 /* ProductListViewModel.swift */; };
+		58B0B74A2BA8CB2F007C2E74 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0B7492BA8CB2F007C2E74 /* Alert.swift */; };
 		58C2FC0E2BA83B9C006E62CD /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2FC0D2BA83B9C006E62CD /* Product.swift */; };
 		58C2FC102BA8452E006E62CD /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2FC0F2BA8452D006E62CD /* ProductListCell.swift */; };
 		58C2FC122BA8464E006E62CD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2FC112BA8464E006E62CD /* NetworkManager.swift */; };
@@ -33,6 +36,9 @@
 		58A603DE2BA7366E00AACD31 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		58A603E02BA7367000AACD31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58A603E32BA7367000AACD31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		58B0B7452BA8BD9D007C2E74 /* PError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PError.swift; sourceTree = "<group>"; };
+		58B0B7472BA8C8FF007C2E74 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		58B0B7492BA8CB2F007C2E74 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		58C2FC0D2BA83B9C006E62CD /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		58C2FC0F2BA8452D006E62CD /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		58C2FC112BA8464E006E62CD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 		5801636D2BA742190050F057 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				58B0B7472BA8C8FF007C2E74 /* ProductListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -106,6 +113,8 @@
 				58A603E02BA7367000AACD31 /* Assets.xcassets */,
 				58A603E22BA7367000AACD31 /* Preview Content */,
 				58C2FC112BA8464E006E62CD /* NetworkManager.swift */,
+				58B0B7452BA8BD9D007C2E74 /* PError.swift */,
+				58B0B7492BA8CB2F007C2E74 /* Alert.swift */,
 			);
 			path = ClothingApp2;
 			sourceTree = "<group>";
@@ -194,9 +203,12 @@
 				5801636F2BA7432F0050F057 /* HomeView.swift in Sources */,
 				58C2FC122BA8464E006E62CD /* NetworkManager.swift in Sources */,
 				58A603DD2BA7366E00AACD31 /* ClothingApp2App.swift in Sources */,
+				58B0B74A2BA8CB2F007C2E74 /* Alert.swift in Sources */,
 				580163712BA7435A0050F057 /* FavoriteView.swift in Sources */,
+				58B0B7482BA8C8FF007C2E74 /* ProductListViewModel.swift in Sources */,
 				580163752BA7439B0050F057 /* ProfileView.swift in Sources */,
 				58CC9ABA2BA7ED260069A753 /* ExploreView.swift in Sources */,
+				58B0B7462BA8BD9D007C2E74 /* PError.swift in Sources */,
 				5801636A2BA73C9B0050F057 /* SplashView.swift in Sources */,
 				58C2FC102BA8452E006E62CD /* ProductListCell.swift in Sources */,
 			);
