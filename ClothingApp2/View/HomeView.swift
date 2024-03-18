@@ -57,7 +57,7 @@ struct HomeView: View {
                 .padding()
                 
                 ScrollView{
-                    ScrollView(.horizontal){
+                    ScrollView(.horizontal, showsIndicators: false){
                         HStack{
                             HomeCardView()
                             HomeCardView()
@@ -88,5 +88,15 @@ struct HomeCardView: View {
         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
             .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
             .frame(minWidth: 150,maxWidth: 150, minHeight: 200)
+            .overlay{
+                VStack{
+                    
+                    Image(systemName: "cart")
+                    
+                    Text("Category")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.white)
+                }
+            }
     }
 }
