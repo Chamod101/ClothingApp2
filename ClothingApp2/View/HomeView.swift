@@ -54,7 +54,25 @@ struct HomeView: View {
                     }.padding()
                     
                 }
-                Spacer()
+                .padding()
+                
+                ScrollView{
+                    ScrollView(.horizontal){
+                        HStack{
+                            HomeCardView()
+                            HomeCardView()
+                            HomeCardView()
+                            HomeCardView()
+                        }
+                    }
+                    .padding()
+                    
+                    
+                }
+                
+            
+                
+                
             }
             
         }
@@ -63,4 +81,12 @@ struct HomeView: View {
 
 #Preview {
     HomeView(isDark: .constant(false))
+}
+
+struct HomeCardView: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            .frame(minWidth: 150,maxWidth: 150, minHeight: 200)
+    }
 }

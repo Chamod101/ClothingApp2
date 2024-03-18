@@ -24,6 +24,13 @@ struct NavigationView: View {
                 }
                 .tag(0)
             
+            ExploreView(isDark: $isDark)
+                .tabItem {
+                    Image(systemName: "doc.text")
+                    Text("Explore")
+                }
+                .tag(0)
+            
             FavoriteView(isDark: $isDark)
                 .tabItem {
                     Image(systemName: "heart")
