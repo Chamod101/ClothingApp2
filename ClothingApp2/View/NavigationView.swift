@@ -29,28 +29,28 @@ struct NavigationView: View {
                     Image(systemName: "doc.text")
                     Text("Explore")
                 }
-                .tag(0)
+                .tag(1)
             
             FavoriteView(isDark: $isDark)
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favorite")
                 }
-                .tag(1)
+                .tag(2)
             
             CartView(isDark: $isDark)
                 .tabItem {
                     Image(systemName: "cart")
                     Text("Cart")
                 }
-                .tag(2)
+                .tag(3)
             
             ProfileView(isDark: $isDark)
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")
                 }
-                .tag(3)
+                .tag(4)
         }
         .accentColor(isDark ? .white : .black)
 

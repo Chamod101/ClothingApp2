@@ -45,7 +45,7 @@ struct HomeView: View {
                         Button(action: {
                             isDark = !isDark
                         }, label: {
-                            Image(systemName: isDark ? "moon.stars.circle": "cloud.sun.circle")
+                            Image(systemName: isDark ? "moon.stars.circle": "sun.max.circle")
                                 .font(.system(size: 50))
                                 .foregroundColor(isDark ?.white : .black)
                         })
@@ -59,10 +59,23 @@ struct HomeView: View {
                 ScrollView{
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
-                            HomeCardView()
-                            HomeCardView()
-                            HomeCardView()
-                            HomeCardView()
+                            HomeCardView(
+                                categoryName: "Trousers",
+                                categoryImage: "DenimBackground")
+                            HomeCardView(
+                                categoryName: "Shirts",
+                                categoryImage: "DenimBackground")
+                            HomeCardView(
+                                categoryName: "Blouse",
+                                categoryImage: "DenimBackground")
+                            HomeCardView(
+                                categoryName: "Saree",
+                                categoryImage: "DenimBackground")
+                            HomeCardView(
+                                categoryName: "Sports",
+                                categoryImage: "DenimBackground")
+                 
+                           
                         }
                     }
                     .padding()
@@ -83,20 +96,28 @@ struct HomeView: View {
     HomeView(isDark: .constant(false))
 }
 
+
 struct HomeCardView: View {
+    
+    var categoryName: String
+    var categoryImage: String
+    
     var body: some View {
-        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-            .frame(minWidth: 150,maxWidth: 150, minHeight: 200)
-            .overlay{
-                VStack{
+        
+                ZStack(){
                     
-                    Image(systemName: "cart")
+                    Image(categoryImage)
+                        .resizable()
+                        .cornerRadius(20)
+                        .frame(width: 150,height: 70)
+                        .scaledToFit()
+                        .opacity(0.8)
+                        
                     
-                    Text("Category")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    Text("\(categoryName)")
+                        .font(.system(size: 20, weight: .bold, design: .serif))
                         .foregroundColor(.white)
                 }
             }
-    }
+    
 }
