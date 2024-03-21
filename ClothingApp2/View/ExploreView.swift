@@ -16,16 +16,7 @@ struct ExploreView: View {
     
     var body: some View {
         
-        
         ZStack{
-            if(isDark){
-                Color.black
-                    .ignoresSafeArea()
-            }else{
-                Color.white
-                    .ignoresSafeArea()
-            }
-            
             NavigationStack{
                 List(viewModel.products){product in
                     ProductListCell(product: product)
@@ -35,9 +26,19 @@ struct ExploreView: View {
             .onAppear{
                 viewModel.getProducts()
             }
+            if viewModel.isLoading{
+                LoadingView()
+            }
+        }
+        .alert(item: $viewModel.alertItem){ alertItem in
+            Alert(title: alertItem.title,
+                  message: alertItem.message,
+                  dismissButton: alertItem.dismissButton)
+        }
+            
             
         }
-    }
+    
     
   
 }

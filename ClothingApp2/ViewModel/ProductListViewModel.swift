@@ -10,15 +10,29 @@ import SwiftUI
 final class ProductListViewModel: ObservableObject {
     
     @Published var products: [Product] = []
+    @Published var alertItem: AlertItem?
+    @Published var isLoading:Bool = false
     
     func getProducts(){
-        NetworkManager.shared.getProducts{ result in
+        isLoading = true
+        NetworkManager.shared.getProducts{ [self] result in
             DispatchQueue.main.async {
+                self.isLoading = false
                 switch result {
                 case .success(let products):
                     self.products = products
+                    
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    switch error{
+                    case .invalidResponse:
+                        self.alertItem = AlertContext.invalidResponse
+                    case .invalidURL:
+                        self.alertItem = AlertContext.invalidURL
+                    case .invalidData:
+                        self.alertItem = AlertContext.invalidDatea
+                    case .unableToComplete:
+                        self.alertItem = AlertContext.unableToComplete
+                    }
                 }
             }
             

@@ -26,12 +26,12 @@ struct AlertContext {
         dismissButton: .default(Text("OK")))
     
     static let invalidURL = AlertItem(
-        title: Text("Invalid Device Input"),
-        message: Text("Something is wrong with the camers. We are unable to capture the input"),
+        title: Text("Server Error"),
+        message: Text("There was an issue with connecting to the server. If this is persists, please contact support."),
         dismissButton: .default(Text("OK")))
     
     static let unableToComplete = AlertItem(
-        title: Text("Invalid Device Input"),
-        message: Text("Something is wrong with the camers. We are unable to capture the input"),
+        title: Text("Server Error"),
+        message: Text("Unable to complete your request at the time.Please check your internet connection"),
         dismissButton: .default(Text("OK")))
 }

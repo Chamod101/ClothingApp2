@@ -5,11 +5,12 @@
 //  Created by Chamod Dilushanka on 2024-03-18.
 //
 
-import Foundation
+import UIKit
 
 final class NetworkManager{
     
     static let shared = NetworkManager()
+    private let cashe = NSCache<NSString, UIImage>()
     
     static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
     
@@ -51,4 +52,31 @@ final class NetworkManager{
         task.resume()
     }
     
+    
+    func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void){
+        let casheKey = NSString(string: urlString)
+        
+        if let image = cashe.object(forKey: casheKey){
+            completed(image)
+            return
+        }
+        
+        guard let url = URL(string: urlString) else{
+            completed(nil)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)){data, response, error in
+            guard let data = data, let image = UIImage(data: data) else{
+                completed(nil)
+                return
+            }
+            
+            self.cashe.setObject(image, forKey: casheKey)
+            completed(image)
+        }
+        
+        task.resume()
+        
+    }
 }
