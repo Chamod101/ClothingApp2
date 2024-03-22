@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-final class ProductListViewModel: ObservableObject {
+public class ProductListViewModel: ObservableObject {
     
     @Published var products: [Product] = []
     @Published var alertItem: AlertItem?
-    @Published var isLoading:Bool = false
+    @Published var isLoading = false
+    @Published var isShowingDetails = false
+    @Published var selectedProduct: Product?
     
     func getProducts(){
         isLoading = true

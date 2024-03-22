@@ -45,7 +45,7 @@ struct NavigationView: View {
                 }
                 .tag(3)
             
-            ProfileView(isDark: $isDark)
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")

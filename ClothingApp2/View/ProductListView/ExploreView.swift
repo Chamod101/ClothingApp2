@@ -14,7 +14,7 @@ struct ExploreView: View {
     @State private var searchTerm = ""
     @State private var isList: Bool = false
     @State private var isShowingDetails: Bool = false
-    @State var selectedProduct: Product
+    @State var selectedProduct: Product?
     
     var filteredProducts: [Product] {
         guard !searchTerm.isEmpty else {return viewModel.products}
@@ -39,14 +39,14 @@ struct ExploreView: View {
                         ForEach(filteredProducts, id: \.id){product in
                                             ProductListCell(product: product)
                                 .onTapGesture {
-                                    selectedProduct = product
-                                   isShowingDetails = true
+                                    viewModel.selectedProduct = product
+                                    viewModel.isShowingDetails = true
                                 }
                                         }
                                     }
                 }
                 .navigationTitle("Explore")
-                .disabled(isShowingDetails)
+                .disabled(viewModel.isShowingDetails)
                 
                 
             }
@@ -54,10 +54,10 @@ struct ExploreView: View {
             .onAppear{
                 viewModel.getProducts()
             }
-            .blur(radius: isShowingDetails ? 20 : 0)
+            .blur(radius: viewModel.isShowingDetails ? 20 : 0)
             
-            if isShowingDetails {
-                ProductDetailView(product: selectedProduct, isShowingDetails: $isShowingDetails)
+            if viewModel.isShowingDetails {
+                ProductDetailView(product: viewModel.selectedProduct!, isShowingDetails: $viewModel.isShowingDetails)
             }
             
             if viewModel.isLoading{

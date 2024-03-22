@@ -32,49 +32,25 @@ struct ProductDetailView: View {
             }
             
             HStack(spacing: 40){
-                VStack(spacing: 5){
-                    Text("Caleries")
-                        .bold()
-                        .font(.caption)
-                    
-                    Text("\(product.calories)")
-                        .foregroundStyle(.secondary)
-                        .fontWeight(.semibold)
-                        .italic()
-                }
-                VStack(spacing: 5){
-                    Text("Caleries")
-                        .bold()
-                        .font(.caption)
-                    
-                    Text("\(product.calories)")
-                        .foregroundStyle(.secondary)
-                        .fontWeight(.semibold)
-                        .italic()
-                }
-                VStack(spacing: 5){
-                    Text("Caleries")
-                        .bold()
-                        .font(.caption)
-                    
-                    Text("\(product.calories)")
-                        .foregroundStyle(.secondary)
-                        .fontWeight(.semibold)
-                        .italic()
-                }
+                ProductCountDetails(
+                    title: "Caleries",
+                    value: product.calories)
+               
+                ProductCountDetails(
+                    title: "Caleries",
+                    value: product.calories)
+                
+                ProductCountDetails(
+                    title: "Caleries",
+                    value: product.calories)
+              
             }
             
             Spacer()
             Button{
                 print("taped")
             } label: {
-                Text("$\(product.price, specifier: "%.2f") - Add to Cart")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .frame(width: 240, height: 50)
-                    .foregroundColor(.white)
-                    .background(.blue)
-                    .cornerRadius(10)
+                ProductBtn(title: "$\(product.price, specifier: "%.2f") - Add to Cart")
             }
             .padding(.bottom,30)
         }
@@ -86,17 +62,7 @@ struct ProductDetailView: View {
             Button{
                 isShowingDetails = false
             } label: {
-                ZStack{
-                    Circle()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.white)
-                        .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                    
-                    Image(systemName: "xmark")
-                        .imageScale(.small)
-                        .frame(width: 44, height: 44)
-                        .foregroundColor(.black)
-                }
+                DismissBtn()
             },
             alignment: .topTrailing
         )
@@ -105,4 +71,23 @@ struct ProductDetailView: View {
 
 #Preview {
     ProductDetailView(product: MockData.sampleProduct, isShowingDetails: .constant(true))
+}
+
+struct ProductCountDetails: View {
+    
+    let title: String
+    let value:Int
+    
+    var body: some View {
+        VStack(spacing: 5){
+            Text(title)
+                .bold()
+                .font(.caption)
+            
+            Text("\(value)")
+                .foregroundStyle(.secondary)
+                .fontWeight(.semibold)
+                .italic()
+        }
+    }
 }
