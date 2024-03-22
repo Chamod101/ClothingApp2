@@ -13,6 +13,8 @@ struct ExploreView: View {
     @Binding var isDark : Bool
     @State private var searchTerm = ""
     @State private var isList: Bool = false
+    @State private var isShowingDetails: Bool = false
+    @State var selectedProduct: Product
     
     var filteredProducts: [Product] {
         guard !searchTerm.isEmpty else {return viewModel.products}
@@ -36,10 +38,15 @@ struct ExploreView: View {
                     LazyVGrid(columns:columns){
                         ForEach(filteredProducts, id: \.id){product in
                                             ProductListCell(product: product)
+                                .onTapGesture {
+                                    selectedProduct = product
+                                   isShowingDetails = true
+                                }
                                         }
                                     }
                 }
                 .navigationTitle("Explore")
+                .disabled(isShowingDetails)
                 
                 
             }
@@ -47,6 +54,12 @@ struct ExploreView: View {
             .onAppear{
                 viewModel.getProducts()
             }
+            .blur(radius: isShowingDetails ? 20 : 0)
+            
+            if isShowingDetails {
+                ProductDetailView(product: selectedProduct, isShowingDetails: $isShowingDetails)
+            }
+            
             if viewModel.isLoading{
                 LoadingView()
             }
@@ -65,5 +78,5 @@ struct ExploreView: View {
 }
 
 #Preview {
-    ExploreView(isDark: .constant(false))
+    ExploreView(isDark: .constant(false), selectedProduct: MockData.sampleProduct)
 }
