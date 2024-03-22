@@ -59,23 +59,10 @@ struct HomeView: View {
                 ScrollView{
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
-                            HomeCardView(
-                                categoryName: "Trousers",
-                                categoryImage: "DenimBackground")
-                            HomeCardView(
-                                categoryName: "Shirts",
-                                categoryImage: "DenimBackground")
-                            HomeCardView(
-                                categoryName: "Blouse",
-                                categoryImage: "DenimBackground")
-                            HomeCardView(
-                                categoryName: "Saree",
-                                categoryImage: "DenimBackground")
-                            HomeCardView(
-                                categoryName: "Sports",
-                                categoryImage: "DenimBackground")
+                            RoundedRectangle(cornerRadius: 5)
+                                .frame(width: 50, height: 50)
+                            
                  
-                           
                         }
                     }
                     .padding()
@@ -97,27 +84,3 @@ struct HomeView: View {
 }
 
 
-struct HomeCardView: View {
-    
-    var categoryName: String
-    var categoryImage: String
-    
-    var body: some View {
-        
-                ZStack(){
-                    
-                    Image(categoryImage)
-                        .resizable()
-                        .cornerRadius(20)
-                        .frame(width: 150,height: 70)
-                        .scaledToFit()
-                        .opacity(0.8)
-                        
-                    
-                    Text("\(categoryName)")
-                        .font(.system(size: 20, weight: .bold, design: .serif))
-                        .foregroundColor(.white)
-                }
-            }
-    
-}

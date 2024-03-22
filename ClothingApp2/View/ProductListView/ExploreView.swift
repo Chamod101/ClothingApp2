@@ -12,16 +12,28 @@ struct ExploreView: View {
     @StateObject var viewModel = ProductListViewModel()
     @Binding var isDark : Bool
 
+    let columns : [GridItem] = [GridItem(.flexible()),GridItem(.flexible())]
 
     
     var body: some View {
         
         ZStack{
+            
             NavigationStack{
-                List(viewModel.products){product in
-                    ProductListCell(product: product)
+//                List(viewModel.products){product in
+//                    ProductListCell(product: product)
+//                }
+//                    .navigationTitle("Explore")
+                
+                ScrollView{
+                    LazyVGrid(columns:columns){
+                        ForEach(viewModel.products, id: \.id){product in
+                                            ProductListCell(product: product)
+                                        }
+                                    }
                 }
-                    .navigationTitle("Explore")
+                .navigationTitle("Explore")
+                
             }
             .onAppear{
                 viewModel.getProducts()
