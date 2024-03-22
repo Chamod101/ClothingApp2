@@ -11,6 +11,13 @@ struct ExploreView: View {
     
     @StateObject var viewModel = ProductListViewModel()
     @Binding var isDark : Bool
+    @State private var searchTerm = ""
+    @State private var isList: Bool = false
+    
+    var filteredProducts: [Product] {
+        guard !searchTerm.isEmpty else {return viewModel.products}
+        return viewModel.products.filter{ $0.name.localizedCaseInsensitiveContains(searchTerm) }
+    }
 
     let columns : [GridItem] = [GridItem(.flexible()),GridItem(.flexible())]
 
@@ -27,14 +34,16 @@ struct ExploreView: View {
                 
                 ScrollView{
                     LazyVGrid(columns:columns){
-                        ForEach(viewModel.products, id: \.id){product in
+                        ForEach(filteredProducts, id: \.id){product in
                                             ProductListCell(product: product)
                                         }
                                     }
                 }
                 .navigationTitle("Explore")
                 
+                
             }
+            .searchable(text: $searchTerm, prompt: "Search product")
             .onAppear{
                 viewModel.getProducts()
             }
