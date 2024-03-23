@@ -9,18 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @Binding var isDark : Bool
+    
     
     var body: some View {
         
         ZStack{
-            if(isDark){
-                Color.black
-                    .ignoresSafeArea()
-            }else{
-                Color.white
-                    .ignoresSafeArea()
-            }
+            
             
             VStack{
                 
@@ -29,7 +23,7 @@ struct HomeView: View {
                         Text("Beauty comes")
                             .font(.system(size: 30, weight: .light, design: .serif))
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(isDark ? .white : .black)
+                            .foregroundColor(.black)
                         Text("When")
                             .font(.system(size: 30, weight: .bold, design: .serif))
                             .foregroundColor(.pink.opacity(0.80))
@@ -37,21 +31,10 @@ struct HomeView: View {
                         Text("Fashion Succeeds")
                             .font(.system(size: 30, weight: .light, design: .serif))
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(isDark ? .white : .black)
+                            .foregroundColor(.black)
                         
                     }.padding()
                     
-                    VStack{
-                        Button(action: {
-                            isDark = !isDark
-                        }, label: {
-                            Image(systemName: isDark ? "moon.stars.circle": "sun.max.circle")
-                                .font(.system(size: 50))
-                                .foregroundColor(isDark ?.white : .black)
-                        })
-
-                       
-                    }.padding()
                     
                 }
                 .padding()
@@ -80,7 +63,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(isDark: .constant(false))
+    HomeView()
 }
 
 

@@ -14,6 +14,8 @@ struct ProfileView: View {
     @State private var email = ""
     @State private var birthdate = Date()
     
+    @Binding var name:String
+    
     var body: some View {
         NavigationStack{
             Form{
@@ -26,7 +28,7 @@ struct ProfileView: View {
                         .autocorrectionDisabled(true)
                     DatePicker("Birthday", selection: $birthdate, displayedComponents: .date)
                     Button{
-                        print("Save")
+                        name = firstName+""+lastName+""+email
                     } label: {
                         Text("Save Changes")
                     }
@@ -40,5 +42,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(name: .constant(""))
 }

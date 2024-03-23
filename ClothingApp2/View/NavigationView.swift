@@ -11,13 +11,14 @@ struct NavigationView: View {
     
     @State var selectedTab: Int = 0
     @State var isDark : Bool = false
+    @State var name: String = ""
     
     
     var body: some View {
         
         TabView(){
             
-            HomeView(isDark: $isDark)
+            HomeView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
@@ -38,14 +39,14 @@ struct NavigationView: View {
                 }
                 .tag(2)
             
-            CartView(isDark: $isDark)
+            CartView(isDark: $isDark, name: $name)
                 .tabItem {
                     Image(systemName: "cart")
                     Text("Cart")
                 }
                 .tag(3)
             
-            ProfileView()
+            ProfileView(name: $name)
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")
