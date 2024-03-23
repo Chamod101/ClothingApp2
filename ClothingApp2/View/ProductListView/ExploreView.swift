@@ -15,6 +15,7 @@ struct ExploreView: View {
     @State private var isList: Bool = false
     @State private var isShowingDetails: Bool = false
     @State var selectedProduct: Product?
+    @State var category: String
     
     var filteredProducts: [Product] {
         guard !searchTerm.isEmpty else {return viewModel.products}
@@ -33,6 +34,7 @@ struct ExploreView: View {
 //                    ProductListCell(product: product)
 //                }
 //                    .navigationTitle("Explore")
+                Text(category)
                 
                 ScrollView{
                     LazyVGrid(columns:columns){
@@ -78,5 +80,5 @@ struct ExploreView: View {
 }
 
 #Preview {
-    ExploreView(isDark: .constant(false), selectedProduct: MockData.sampleProduct)
+    ExploreView(isDark: .constant(false), selectedProduct: MockData.sampleProduct, category: "")
 }

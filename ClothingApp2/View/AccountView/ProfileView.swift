@@ -27,6 +27,8 @@ struct ProfileView: View {
                         .textInputAutocapitalization(.none)
                         .autocorrectionDisabled(true)
                     DatePicker("Birthday", selection: $birthdate, displayedComponents: .date)
+                    TextField("Enter your password", text: $lastName)
+                    TextField("Confirm your password", text: $lastName)
                     Button{
                         name = firstName+""+lastName+""+email
                     } label: {

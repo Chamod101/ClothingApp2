@@ -16,32 +16,7 @@ struct CartView: View {
         
         ZStack{
             if(name == ""){
-                VStack{
-                  
-                    VStack{
-                        Text("Please Create a account")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                        
-                        Text("Login first")
-                            .multilineTextAlignment(.center)
-                            .font(.body)
-                            .padding()
-                    }
-
-                    
-                    Spacer()
-                    Button{
-                        print("taped")
-                    } label: {
-                        ProductBtn(title: "Please Create a account")
-                    }
-                    .padding(.bottom,30)
-                }
-                .frame(width: 300, height: 525)
-                .background(Color(.systemBackground))
-                .cornerRadius(15)
-                .shadow(radius: 40)
+                LoginNotificationView(bodyText: "Please creare an account before view the cart")
             }
         }
         

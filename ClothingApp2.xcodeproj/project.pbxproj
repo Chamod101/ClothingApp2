@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EDE79102BAEC5560042882B /* LoginNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE790F2BAEC5560042882B /* LoginNotificationView.swift */; };
+		0EDE79122BAECB060042882B /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE79112BAECB060042882B /* BannerView.swift */; };
 		5801636A2BA73C9B0050F057 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580163692BA73C9B0050F057 /* SplashView.swift */; };
 		5801636F2BA7432F0050F057 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5801636E2BA7432F0050F057 /* HomeView.swift */; };
 		580163712BA7435A0050F057 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580163702BA7435A0050F057 /* FavoriteView.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EDE790F2BAEC5560042882B /* LoginNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNotificationView.swift; sourceTree = "<group>"; };
+		0EDE79112BAECB060042882B /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		580163692BA73C9B0050F057 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		5801636E2BA7432F0050F057 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		580163702BA7435A0050F057 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				580163692BA73C9B0050F057 /* SplashView.swift */,
 				5801636E2BA7432F0050F057 /* HomeView.swift */,
 				580163702BA7435A0050F057 /* FavoriteView.swift */,
+				0EDE79112BAECB060042882B /* BannerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				580163742BA7439B0050F057 /* ProfileView.swift */,
+				0EDE790F2BAEC5560042882B /* LoginNotificationView.swift */,
 			);
 			path = AccountView;
 			sourceTree = "<group>";
@@ -289,11 +295,13 @@
 			files = (
 				580163732BA7437B0050F057 /* CartView.swift in Sources */,
 				58C16F1B2BAD179C00933273 /* RemoteImage.swift in Sources */,
+				0EDE79102BAEC5560042882B /* LoginNotificationView.swift in Sources */,
 				58A603DF2BA7366E00AACD31 /* NavigationView.swift in Sources */,
 				58C2FC0E2BA83B9C006E62CD /* Product.swift in Sources */,
 				5801636F2BA7432F0050F057 /* HomeView.swift in Sources */,
 				58C2FC122BA8464E006E62CD /* NetworkManager.swift in Sources */,
 				58A603DD2BA7366E00AACD31 /* ClothingApp2App.swift in Sources */,
+				0EDE79122BAECB060042882B /* BannerView.swift in Sources */,
 				58BB12682BADE43F00EA3166 /* DismissBtn.swift in Sources */,
 				58B0B74A2BA8CB2F007C2E74 /* Alert.swift in Sources */,
 				580163712BA7435A0050F057 /* FavoriteView.swift in Sources */,
