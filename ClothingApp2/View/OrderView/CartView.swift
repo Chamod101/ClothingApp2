@@ -11,14 +11,34 @@ struct CartView: View {
     
     @Binding var isDark : Bool
     @Binding var name: String
+    @State private var orderItem = MockData.productsCart
     
     var body: some View {
         
-        ZStack{
-            if(name == ""){
-                LoginNotificationView(bodyText: "Please creare an account before view the cart")
+        NavigationStack{
+            VStack{
+                List{
+                    ForEach(orderItem){product in
+                        ProductListCell(product: product)
+                        
+                    }.onDelete(perform: { indexSet in
+                        orderItem.remove(atOffsets: indexSet)
+                    })
+                }
+                .listStyle(PlainListStyle())
+                
+            
+                Button{
+                    
+                } label: {
+                    ProductBtn(title: "Place order")
+                }
+                .padding(.bottom, 25)
             }
+            
+            .navigationTitle("Cart")
         }
+        
         
     }
 }

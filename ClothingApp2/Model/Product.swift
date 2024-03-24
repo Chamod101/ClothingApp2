@@ -35,5 +35,26 @@ struct MockData{
                                        size: "test",
                                        category: "test")
     
+    
     static let products = [sampleProduct,sampleProduct,sampleProduct,sampleProduct]
+    
+    static let sampleProduct1 = Product(
+                                       id:1,
+                                       name: "test",
+                                       description: "test",
+                                       price: 23.33,
+                                       imageURL: "weew",
+                                       colour: "test",
+                                       size: "test",
+                                       category: "test")
+    static let sampleProduct2 = Product(
+                                       id:2,
+                                       name: "test",
+                                       description: "test",
+                                       price: 23.33,
+                                       imageURL: "weew",
+                                       colour: "test",
+                                       size: "test",
+                                       category: "test")
+    static let productsCart = [sampleProduct1,sampleProduct2]
 }
