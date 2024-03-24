@@ -12,20 +12,20 @@ struct NavigationView: View {
     @State var selectedTab: Int = 0
     @State var isDark : Bool = false
     @State var name: String = ""
-    
+    @State var category: String = ""
     
     var body: some View {
         
         TabView(){
             
-            HomeView()
+            HomeView(selectedCategory: $category, selectedTab: $selectedTab)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
                 .tag(0)
-            
-            ExploreView(isDark: $isDark, selectedProduct: MockData.sampleProduct, category: "")
+        
+            ExploreView(selectedProduct: MockData.sampleProduct, selectedCategory: $category)
                 .tabItem {
                     Image(systemName: "doc.text")
                     Text("Explore")

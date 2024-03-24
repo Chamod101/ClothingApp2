@@ -10,20 +10,24 @@ import SwiftUI
 struct ExploreView: View {
     
     @StateObject var viewModel = ProductListViewModel()
-    @Binding var isDark : Bool
     @State private var searchTerm = ""
     @State private var isList: Bool = false
     @State private var isShowingDetails: Bool = false
     @State var selectedProduct: Product?
-    @State var category: String
+    @Binding var selectedCategory: String
+    
+    var filterdCategory:  [Product] {
+        guard !selectedCategory.isEmpty else {return viewModel.products}
+        return viewModel.products.filter{ $0.category.localizedCaseInsensitiveContains(selectedCategory) }
+    }
     
     var filteredProducts: [Product] {
-        guard !searchTerm.isEmpty else {return viewModel.products}
-        return viewModel.products.filter{ $0.name.localizedCaseInsensitiveContains(searchTerm) }
+        guard !searchTerm.isEmpty else {return filterdCategory}
+        return filterdCategory.filter{ $0.name.localizedCaseInsensitiveContains(searchTerm) }
     }
 
     let columns : [GridItem] = [GridItem(.flexible()),GridItem(.flexible())]
-
+    
     
     var body: some View {
         
@@ -34,7 +38,19 @@ struct ExploreView: View {
 //                    ProductListCell(product: product)
 //                }
 //                    .navigationTitle("Explore")
-                Text(category)
+                
+                
+                if !(selectedCategory == ""){
+                    HStack{
+                        Text("Category - \(selectedCategory)")
+                        Spacer()
+                        Button(action: {
+                            selectedCategory = ""
+                        }, label: {
+                            Text("Clear Filter")
+                        })
+                    }.padding()
+                }
                 
                 ScrollView{
                     LazyVGrid(columns:columns){
@@ -80,5 +96,5 @@ struct ExploreView: View {
 }
 
 #Preview {
-    ExploreView(isDark: .constant(false), selectedProduct: MockData.sampleProduct, category: "")
+    ExploreView(selectedProduct: MockData.sampleProduct, selectedCategory: .constant("sample"))
 }

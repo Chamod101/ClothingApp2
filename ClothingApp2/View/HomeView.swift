@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var viewModel = ProductListViewModel()
+    @Binding var selectedCategory: String
+    @Binding var selectedTab: Int
     
     var body: some View {
         
@@ -51,8 +53,13 @@ struct HomeView: View {
                                     
                                     ForEach (uniqueCategories.sorted(), id: \.self) {category in
                                         HStack {
-                                            Text(category)
-                                                .font(.system(size: 15, weight: .light))
+                                            
+                                            Button( action: {
+                                                selectedCategory = category;
+                                            }, label: {
+                                                Text(category)
+                                                    .font(.system(size: 15, weight: .light))
+                                            })
                                         }
                                         .padding(5)
                                         .frame(width: 100, height: 40)
@@ -123,7 +130,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(selectedCategory: .constant("smaple"), selectedTab: .constant(0))
 }
 
 
