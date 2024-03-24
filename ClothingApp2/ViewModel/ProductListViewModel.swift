@@ -14,6 +14,7 @@ public class ProductListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var isShowingDetails = false
     @Published var selectedProduct: Product?
+    @State var uniqueCategories: Set<String> = Set()
     
     func getProducts(){
         isLoading = true
@@ -39,5 +40,13 @@ public class ProductListViewModel: ObservableObject {
             }
             
         }
+    }
+    
+    func getUniqueCategories(from products: [Product]) -> Set<String> {
+        var uniqueCategories: Set<String> = Set()
+        for product in products {
+            uniqueCategories.insert(product.category)
+        }
+        return uniqueCategories
     }
 }

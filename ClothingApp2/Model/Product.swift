@@ -8,14 +8,16 @@
 import Foundation
 
 struct Product: Decodable, Identifiable{
+    
     let id: Int
     let name: String
     let description: String
     let price: Double
-    let imageURL: String
-    let calories: Int
-    let protein: Int
-    let carbs: Int
+    let imageURL:String
+    let colour: String
+    let size: String
+    let category: String
+    
 }
 
 struct ProductResponse: Decodable {
@@ -23,14 +25,15 @@ struct ProductResponse: Decodable {
 }
 
 struct MockData{
-    static let sampleProduct = Product(id: 0001,
-                                       name: "Test Appetizer",
-                                        description: "This is the description for my appetizer. It's yummy.",
-                                        price: 9.99,
-                                        imageURL: "",
-                                        calories: 99,
-                                        protein: 99,
-                                        carbs: 99)
+    static let sampleProduct = Product(
+                                       id:1,
+                                       name: "test",
+                                       description: "test",
+                                       price: 23.33,
+                                       imageURL: "weew",
+                                       colour: "test",
+                                       size: "test",
+                                       category: "test")
     
     static let products = [sampleProduct,sampleProduct,sampleProduct,sampleProduct]
 }

@@ -46,9 +46,12 @@ struct HomeView: View {
                                                     
                             ScrollView(.horizontal, showsIndicators: false) {
                                 LazyHStack(spacing: -24) {
-                                    ForEach (viewModel.products, id: \.id) {product in
+                                   
+                                    let uniqueCategories = viewModel.getUniqueCategories(from: viewModel.products)
+                                    
+                                    ForEach (uniqueCategories.sorted(), id: \.self) {category in
                                         HStack {
-                                            Text(".\(product.price)")
+                                            Text(category)
                                                 .font(.system(size: 15, weight: .light))
                                         }
                                         .padding(5)

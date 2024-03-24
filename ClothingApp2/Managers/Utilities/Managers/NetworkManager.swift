@@ -11,12 +11,10 @@ final class NetworkManager{
     
     static let shared = NetworkManager()
     private let cashe = NSCache<NSString, UIImage>()
+        
+    private let productURL = "https://clothsapi.onrender.com/products"
     
-    static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
-    
-    private let productURL = baseURL + "appetizers"
-    
-    
+//    private let productURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/appetizers"
     private init(){}
     
     func getProducts(completed: @escaping (Result<[Product], PError>) -> Void){
@@ -43,8 +41,10 @@ final class NetworkManager{
             
             do{
                 let decoder = JSONDecoder()
-                let decodResponse =  try decoder.decode(ProductResponse.self, from: data)
-                completed(.success(decodResponse.request))
+                let products =  try decoder.decode([Product].self, from: data)
+                print(data)
+                
+                completed(.success(products))
             } catch{
                 completed(.failure(.invalidData))
             }

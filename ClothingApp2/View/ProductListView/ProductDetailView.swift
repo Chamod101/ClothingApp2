@@ -33,16 +33,16 @@ struct ProductDetailView: View {
             
             HStack(spacing: 40){
                 ProductCountDetails(
-                    title: "Caleries",
-                    value: product.calories)
+                    title: "Colour",
+                    value: product.colour)
                
                 ProductCountDetails(
-                    title: "Caleries",
-                    value: product.calories)
+                    title: "Size",
+                    value: product.size)
                 
                 ProductCountDetails(
-                    title: "Caleries",
-                    value: product.calories)
+                    title: "Category",
+                    value: product.category)
               
             }
             
@@ -76,7 +76,7 @@ struct ProductDetailView: View {
 struct ProductCountDetails: View {
     
     let title: String
-    let value:Int
+    let value:String
     
     var body: some View {
         VStack(spacing: 5){
@@ -84,7 +84,7 @@ struct ProductCountDetails: View {
                 .bold()
                 .font(.caption)
             
-            Text("\(value)")
+            Text(value)
                 .foregroundStyle(.secondary)
                 .fontWeight(.semibold)
                 .italic()
