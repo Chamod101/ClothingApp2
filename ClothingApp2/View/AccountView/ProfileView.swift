@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
-    @State private var birthdate = Date()
+    @StateObject var viewModel = UserViewModel()
+    
+   
+    @State var isShowingPassword: Bool = false
+
     
     @Binding var name:String
     
@@ -20,24 +21,64 @@ struct ProfileView: View {
         NavigationStack{
             Form{
                 Section(header: Text("Personal Info")){
-                    TextField("First Name", text: $firstName)
-                    TextField("Last Name", text: $lastName)
-                    TextField("Email", text: $email)
+                    TextField("First Name", text: $viewModel.user.firstName)
+                    TextField("Last Name", text: $viewModel.user.lastName)
+                    TextField("Email", text: $viewModel.user.email)
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.none)
                         .autocorrectionDisabled(true)
-                    DatePicker("Birthday", selection: $birthdate, displayedComponents: .date)
-                    TextField("Enter your password", text: $lastName)
-                    TextField("Confirm your password", text: $lastName)
-                    Button{
-                        name = firstName+""+lastName+""+email
-                    } label: {
-                        Text("Save Changes")
-                    }
+                    DatePicker("Birthday", selection: $viewModel.user.birthdate, displayedComponents: .date)
+                   
+                    
                 }
+                Section(header: Text("Passwords"), content: {
+                    
+                    VStack {
+                                Group {
+                                    if isShowingPassword {
+                                        TextField("Enter a password", text: $viewModel.user.password)
+                                        TextField("Enter a password", text: $viewModel.user.confirmPassword)
+                                    }else {
+                                        SecureField("Enter a password", text: $viewModel.user.password)
+                                        SecureField("Enter a password", text: $viewModel.user.confirmPassword)
+                                    }
+                                }
+                                .disableAutocorrection(true)
+                                .autocapitalization(.none)
+                                .padding()
+                                
+                                Button {
+                                    isShowingPassword.toggle()
+                                }label: {
+                                    if isShowingPassword {
+                                        Text("Hide")
+                                    }else {
+                                        Text("Show")
+                                    }
+                                }
+                            }
+                })
+                
+                Section(header: Text(""), content: {
+                    VStack {
+                        
+                        Button {
+                            viewModel.saveChanges()
+                        }label: {
+                            Text("Save Changes")
+                        }
+                    }
+                })
             }
             
             .navigationTitle("My Profile")
+        }
+        .onAppear{
+            viewModel.retrievUser()
+        }
+        .alert(item: $viewModel.alertItem) { alertItem in
+            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
+            
         }
         
     }

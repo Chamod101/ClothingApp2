@@ -14,6 +14,9 @@
 		580163712BA7435A0050F057 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580163702BA7435A0050F057 /* FavoriteView.swift */; };
 		580163732BA7437B0050F057 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580163722BA7437B0050F057 /* CartView.swift */; };
 		580163752BA7439B0050F057 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580163742BA7439B0050F057 /* ProfileView.swift */; };
+		581161882BB0BF8700BEBCDD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581161872BB0BF8700BEBCDD /* UserViewModel.swift */; };
+		5811618A2BB0C2F900BEBCDD /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581161892BB0C2F900BEBCDD /* StringExt.swift */; };
+		5811618C2BB0C9C000BEBCDD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811618B2BB0C9C000BEBCDD /* User.swift */; };
 		58A603DD2BA7366E00AACD31 /* ClothingApp2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A603DC2BA7366E00AACD31 /* ClothingApp2App.swift */; };
 		58A603DF2BA7366E00AACD31 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A603DE2BA7366E00AACD31 /* NavigationView.swift */; };
 		58A603E12BA7367000AACD31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A603E02BA7367000AACD31 /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 		580163702BA7435A0050F057 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		580163722BA7437B0050F057 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		580163742BA7439B0050F057 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		581161872BB0BF8700BEBCDD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		581161892BB0C2F900BEBCDD /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		5811618B2BB0C9C000BEBCDD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		58A603D92BA7366E00AACD31 /* ClothingApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothingApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A603DC2BA7366E00AACD31 /* ClothingApp2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingApp2App.swift; sourceTree = "<group>"; };
 		58A603DE2BA7366E00AACD31 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				58C2FC0D2BA83B9C006E62CD /* Product.swift */,
+				5811618B2BB0C9C000BEBCDD /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				58B0B7472BA8C8FF007C2E74 /* ProductListViewModel.swift */,
+				581161872BB0BF8700BEBCDD /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				58BA408E2BABC93500DCED70 /* ColorExt.swift */,
+				581161892BB0C2F900BEBCDD /* StringExt.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -296,6 +305,7 @@
 				580163732BA7437B0050F057 /* CartView.swift in Sources */,
 				58C16F1B2BAD179C00933273 /* RemoteImage.swift in Sources */,
 				0EDE79102BAEC5560042882B /* LoginNotificationView.swift in Sources */,
+				5811618C2BB0C9C000BEBCDD /* User.swift in Sources */,
 				58A603DF2BA7366E00AACD31 /* NavigationView.swift in Sources */,
 				58C2FC0E2BA83B9C006E62CD /* Product.swift in Sources */,
 				5801636F2BA7432F0050F057 /* HomeView.swift in Sources */,
@@ -303,6 +313,8 @@
 				58A603DD2BA7366E00AACD31 /* ClothingApp2App.swift in Sources */,
 				0EDE79122BAECB060042882B /* BannerView.swift in Sources */,
 				58BB12682BADE43F00EA3166 /* DismissBtn.swift in Sources */,
+				5811618A2BB0C2F900BEBCDD /* StringExt.swift in Sources */,
+				581161882BB0BF8700BEBCDD /* UserViewModel.swift in Sources */,
 				58B0B74A2BA8CB2F007C2E74 /* Alert.swift in Sources */,
 				580163712BA7435A0050F057 /* FavoriteView.swift in Sources */,
 				58BA408B2BABC7DE00DCED70 /* LoadingView.swift in Sources */,

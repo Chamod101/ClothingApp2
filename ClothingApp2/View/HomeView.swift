@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var viewModel = ProductListViewModel()
+    @StateObject var userViewModel = UserViewModel()
     @Binding var selectedCategory: String
     @Binding var selectedTab: Int
     
@@ -110,6 +111,7 @@ struct HomeView: View {
                
                 .onAppear{
                     viewModel.getProducts()
+                    userViewModel.retrievUser()
                 }
             
                 
