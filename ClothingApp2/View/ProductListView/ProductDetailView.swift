@@ -11,6 +11,8 @@ import SwiftUI
 
 struct ProductDetailView: View {
     
+    @EnvironmentObject var order: Order
+    
     let product: Product
     @Binding var isShowingDetails: Bool
     
@@ -53,7 +55,7 @@ struct ProductDetailView: View {
             
             Spacer()
             Button{
-                print("taped")
+                order.add(product)
             } label: {
                 ProductBtn(title: "$\(product.price, specifier: "%.2f") - Add to Cart")
             }

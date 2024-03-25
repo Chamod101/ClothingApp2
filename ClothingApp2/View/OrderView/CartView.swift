@@ -11,7 +11,8 @@ struct CartView: View {
     
     @Binding var isDark : Bool
     @Binding var name: String
-    @State private var orderItem = MockData.productsCart
+    
+    @EnvironmentObject var order: Order
     
     var body: some View {
         
@@ -19,12 +20,12 @@ struct CartView: View {
             ZStack{
                 VStack{
                     List{
-                        ForEach(orderItem){product in
+                        ForEach(order.items){product in
                             CartListCell(product: product)
                             
-                        }.onDelete(perform: { indexSet in
-                            orderItem.remove(atOffsets: indexSet)
-                        })
+                        }
+                        .onDelete(perform: deleteItems)
+                                    
                     }
                     .listStyle(PlainListStyle())
                     
@@ -37,7 +38,7 @@ struct CartView: View {
                     .padding(.bottom, 25)
                 }
                 
-                if orderItem.isEmpty {
+                if order.items.isEmpty {
                     EmptyState(imageName: "PlaceHolder", lable: "You have no items in your cart")
                 }
             }
@@ -46,6 +47,11 @@ struct CartView: View {
         }
         
         
+        
+    }
+    
+    func deleteItems(at offsets: IndexSet) {
+        order.items.remove(atOffsets: offsets)
     }
 }
 

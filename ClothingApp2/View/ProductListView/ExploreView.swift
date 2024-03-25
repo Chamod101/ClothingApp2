@@ -63,7 +63,7 @@ struct ExploreView: View {
                                         }
                                     }
                 }
-                .navigationTitle("Explore")
+                .navigationTitle(selectedCategory == "" ? "Explore" : selectedCategory)
                 .disabled(viewModel.isShowingDetails)
                 
                 
