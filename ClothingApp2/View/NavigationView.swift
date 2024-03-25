@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NavigationView: View {
     
+    @EnvironmentObject var order: Order
     @State var selectedTab: Int = 0
     @State var isDark : Bool = false
     @State var name: String = ""
@@ -44,6 +45,7 @@ struct NavigationView: View {
                     Image(systemName: "cart")
                     Text("Cart")
                 }
+                .badge(order.items.count)
                 .tag(3)
             
             ProfileView(name: $name)

@@ -24,7 +24,7 @@ struct CartView: View {
                             CartListCell(product: product)
                             
                         }
-                        .onDelete(perform: deleteItems)
+                        .onDelete(perform: order.deleteItems)
                                     
                     }
                     .listStyle(PlainListStyle())
@@ -33,7 +33,7 @@ struct CartView: View {
                     Button{
                         
                     } label: {
-                        ProductBtn(title: "Place order")
+                        ProductBtn(title: "$\(order.totalPrice, specifier: "%.2f") - Confirm order")
                     }
                     .padding(.bottom, 25)
                 }
@@ -50,9 +50,7 @@ struct CartView: View {
         
     }
     
-    func deleteItems(at offsets: IndexSet) {
-        order.items.remove(atOffsets: offsets)
-    }
+    
 }
 
 #Preview {

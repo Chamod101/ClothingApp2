@@ -120,9 +120,13 @@ struct HomeView: View {
                                         
                             Spacer()
                                         
-                            Text("View All")
-                                .font(.system(size: 14, weight: .medium))
-                                .foregroundStyle(.gray)
+                            Button{
+                                selectedTab = 1
+                            } label: {
+                                Text("View All")
+                                    .font(.system(size: 14, weight: .medium))
+                                    .foregroundStyle(.gray)
+                            }
                         }
                         .padding(.horizontal, 20)
                         .padding(.vertical, 10)
@@ -149,9 +153,13 @@ struct HomeView: View {
                                         
                             Spacer()
                                         
-                            Text("View All")
-                                .font(.system(size: 14, weight: .medium))
-                                .foregroundStyle(.gray)
+                            Button{
+                                selectedTab = 1
+                            } label: {
+                                Text("View All")
+                                    .font(.system(size: 14, weight: .medium))
+                                    .foregroundStyle(.gray)
+                            }
                         }
                         .padding(.horizontal, 20)
                         .padding(.vertical, 10)

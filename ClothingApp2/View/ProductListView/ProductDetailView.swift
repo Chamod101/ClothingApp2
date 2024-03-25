@@ -56,6 +56,7 @@ struct ProductDetailView: View {
             Spacer()
             Button{
                 order.add(product)
+                isShowingDetails = false
             } label: {
                 ProductBtn(title: "$\(product.price, specifier: "%.2f") - Add to Cart")
             }
