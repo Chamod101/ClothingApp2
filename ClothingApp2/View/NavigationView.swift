@@ -16,7 +16,7 @@ struct NavigationView: View {
     
     var body: some View {
         
-        TabView(){
+        TabView(selection: $selectedTab){
             
             HomeView(selectedCategory: $category, selectedTab: $selectedTab)
                 .tabItem {

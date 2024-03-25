@@ -14,6 +14,8 @@ struct HomeView: View {
     @Binding var selectedCategory: String
     @Binding var selectedTab: Int
     
+    let columns : [GridItem] = [GridItem(.flexible()),GridItem(.flexible())]
+    
     var body: some View {
         
         ZStack{
@@ -57,6 +59,7 @@ struct HomeView: View {
                                             
                                             Button( action: {
                                                 selectedCategory = category;
+                                                selectedTab = 1
                                             }, label: {
                                                 Text(category)
                                                     .font(.system(size: 15, weight: .light))
@@ -80,17 +83,23 @@ struct HomeView: View {
                                .foregroundStyle(.black)
                                         
                             Spacer()
+                            
+                            Button{
+                                selectedTab = 1
+                            } label: {
+                                Text("View All")
+                                    .font(.system(size: 14, weight: .medium))
+                                    .foregroundStyle(.gray)
+                            }
                                         
-                            Text("View All")
-                                .font(.system(size: 14, weight: .medium))
-                                .foregroundStyle(.gray)
+                            
                         }
                         .padding(.horizontal, 20)
                         .padding(.vertical, 10)
                                         
                          ScrollView(.horizontal, showsIndicators: false){
                              LazyHStack(spacing: 5){
-                               ForEach(viewModel.products, id: \.id){product in
+                               ForEach(viewModel.products.shuffled().prefix(4), id: \.id){product in
                                  ProductListCell(product: product)
                                    .onTapGesture {
                                        viewModel.selectedProduct = product
@@ -103,6 +112,64 @@ struct HomeView: View {
                             .padding(.horizontal, 20)
                             .padding(.vertical, -20)
                         
+                        
+                        HStack {
+                           Text("New Arrivals")
+                               .font(.system(size: 24, weight: .semibold))
+                               .foregroundStyle(.black)
+                                        
+                            Spacer()
+                                        
+                            Text("View All")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundStyle(.gray)
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                                        
+                         ScrollView(.horizontal, showsIndicators: false){
+                             LazyHStack(spacing: 5){
+                               ForEach(viewModel.products.shuffled().prefix(4), id: \.id){product in
+                                 ProductListCell(product: product)
+                                   .onTapGesture {
+                                       viewModel.selectedProduct = product
+                                       viewModel.isShowingDetails = true
+                                           }
+                                     }
+                               }
+                                .frame(height: 200)
+                             }
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, -20)
+                        
+                        HStack {
+                           Text("Browse products")
+                               .font(.system(size: 24, weight: .semibold))
+                               .foregroundStyle(.black)
+                                        
+                            Spacer()
+                                        
+                            Text("View All")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundStyle(.gray)
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                                        
+                        LazyVGrid(columns:columns){
+                             
+                               ForEach(viewModel.products.shuffled().prefix(10), id: \.id){product in
+                                 ProductListCell(product: product)
+                                   .onTapGesture {
+                                       viewModel.selectedProduct = product
+                                       viewModel.isShowingDetails = true
+                                           }
+                                     }
+                               
+                                .frame(height: 200)
+                             }
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, -20)
                         
                     }
                                      

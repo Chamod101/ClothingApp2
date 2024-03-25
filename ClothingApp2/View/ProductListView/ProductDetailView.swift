@@ -16,35 +16,40 @@ struct ProductDetailView: View {
     
     var body: some View {
         VStack{
+            
+            
             ProductRemoteImage(urlString: product.imageURL)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 300, height: 270)
             
-            VStack{
-                Text(product.name)
-                    .font(.title2)
-                    .fontWeight(.semibold)
+            ScrollView{
+                VStack{
+                    Text(product.name)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    
+                    Text(product.description)
+                        .multilineTextAlignment(.center)
+                        .font(.body)
+                        .padding()
+                }
                 
-                Text(product.description)
-                    .multilineTextAlignment(.center)
-                    .font(.body)
-                    .padding()
+                HStack(spacing: 40){
+                    ProductCountDetails(
+                        title: "Colour",
+                        value: product.colour)
+                   
+                    ProductCountDetails(
+                        title: "Size",
+                        value: product.size)
+                    
+                    ProductCountDetails(
+                        title: "Category",
+                        value: product.category)
+                  
+                }
             }
             
-            HStack(spacing: 40){
-                ProductCountDetails(
-                    title: "Colour",
-                    value: product.colour)
-               
-                ProductCountDetails(
-                    title: "Size",
-                    value: product.size)
-                
-                ProductCountDetails(
-                    title: "Category",
-                    value: product.category)
-              
-            }
             
             Spacer()
             Button{

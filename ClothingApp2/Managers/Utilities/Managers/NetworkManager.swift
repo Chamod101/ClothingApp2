@@ -14,7 +14,7 @@ final class NetworkManager{
         
     private let productURL = "https://clothsapi.onrender.com/products"
     
-//    private let productURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/appetizers"
+
     private init(){}
     
     func getProducts(completed: @escaping (Result<[Product], PError>) -> Void){

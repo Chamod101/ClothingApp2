@@ -16,24 +16,30 @@ struct CartView: View {
     var body: some View {
         
         NavigationStack{
-            VStack{
-                List{
-                    ForEach(orderItem){product in
-                        ProductListCell(product: product)
-                        
-                    }.onDelete(perform: { indexSet in
-                        orderItem.remove(atOffsets: indexSet)
-                    })
-                }
-                .listStyle(PlainListStyle())
-                
-            
-                Button{
+            ZStack{
+                VStack{
+                    List{
+                        ForEach(orderItem){product in
+                            CartListCell(product: product)
+                            
+                        }.onDelete(perform: { indexSet in
+                            orderItem.remove(atOffsets: indexSet)
+                        })
+                    }
+                    .listStyle(PlainListStyle())
                     
-                } label: {
-                    ProductBtn(title: "Place order")
+                
+                    Button{
+                        
+                    } label: {
+                        ProductBtn(title: "Place order")
+                    }
+                    .padding(.bottom, 25)
                 }
-                .padding(.bottom, 25)
+                
+                if orderItem.isEmpty {
+                    EmptyState(imageName: "PlaceHolder", lable: "You have no items in your cart")
+                }
             }
             
             .navigationTitle("Cart")
