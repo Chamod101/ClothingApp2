@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CartView: View {
     
+    @StateObject var userViewModel = UserViewModel()
+    
     @Binding var isDark : Bool
     @Binding var name: String
     
@@ -37,12 +39,20 @@ struct CartView: View {
                     }
                     .padding(.bottom, 25)
                 }
-                
-                if order.items.isEmpty {
-                    EmptyState(imageName: "emptyCart", lable: "You have no items in your cart")
+                if userViewModel.user.firstName.isEmpty{
+                   LoginState()
+                    
                 }
+                else
+                    if order.items.isEmpty {
+                        EmptyState(imageName: "emptyCart", lable: "You have no items in your cart")
+                    }
+                
+                
             }
-            
+            .onAppear{
+                userViewModel.retrievUser()
+            }
             .navigationTitle("Cart")
         }
         

@@ -12,7 +12,7 @@ struct Product: Decodable, Identifiable{
     let id: Int
     let name: String
     let description: String
-    let price: Double
+    var price: Double
     let imageURL:String
     let colour: String
     let size: String

@@ -10,6 +10,7 @@ import SwiftUI
 struct FavoriteView: View {
     
     @Binding var isDark : Bool
+    @StateObject var userViewModel = UserViewModel()
     
     @EnvironmentObject var fav: Favorite
 
@@ -30,11 +31,17 @@ struct FavoriteView: View {
                   
                 }
                 
-                if fav.favItems.isEmpty{
+                if userViewModel.user.firstName.isEmpty{
+                   LoginState()
+                    
+                }
+                else if fav.favItems.isEmpty{
                     EmptyState(imageName: "favIcon", lable: "You have no favorite items yet")
                 }
             }
-            
+            .onAppear{
+                userViewModel.retrievUser()
+            }
             .navigationTitle("Favorite")
         }
         

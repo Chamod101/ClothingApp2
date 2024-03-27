@@ -13,12 +13,14 @@ struct HomeView: View {
     @StateObject var userViewModel = UserViewModel()
     @Binding var selectedCategory: String
     @Binding var selectedTab: Int
+   
     
     let columns : [GridItem] = [GridItem(.flexible()),GridItem(.flexible())]
     
     var body: some View {
         
         ZStack{
+            
             
             
             VStack{
@@ -182,7 +184,7 @@ struct HomeView: View {
                     }
                                      
                 
-                }
+                }.disabled(viewModel.isShowingDetails ? true : false)
                
                 .onAppear{
                     viewModel.getProducts()
@@ -192,6 +194,7 @@ struct HomeView: View {
                 
                 
             }
+            
             .blur(radius: viewModel.isShowingDetails ? 20 : 0)
             if viewModel.isShowingDetails {
                 ProductDetailView(product: viewModel.selectedProduct!, isShowingDetails: $viewModel.isShowingDetails)
@@ -201,16 +204,7 @@ struct HomeView: View {
                 LoadingView()
             }
             
-            if userViewModel.userAvailable {
-                VStack{
-                    Text("user available")
-                }
-            }
-            else{
-                VStack{
-                    Text("user not available")
-                }
-            }
+            
             
         }
     }

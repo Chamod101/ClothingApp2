@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0EA9370B2BB3C571000AA61D /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9370A2BB3C571000AA61D /* Favorite.swift */; };
 		0EA9370D2BB3D3F8000AA61D /* FavBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9370C2BB3D3F8000AA61D /* FavBtn.swift */; };
+		0EA9370F2BB3F7C7000AA61D /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9370E2BB3F7C7000AA61D /* LoginState.swift */; };
 		0EDE79102BAEC5560042882B /* LoginNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE790F2BAEC5560042882B /* LoginNotificationView.swift */; };
 		0EDE79122BAECB060042882B /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE79112BAECB060042882B /* BannerView.swift */; };
 		516FE89F2BB15BD500FACEAE /* CartListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516FE89E2BB15BD500FACEAE /* CartListCell.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		0EA9370A2BB3C571000AA61D /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		0EA9370C2BB3D3F8000AA61D /* FavBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavBtn.swift; sourceTree = "<group>"; };
+		0EA9370E2BB3F7C7000AA61D /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		0EDE790F2BAEC5560042882B /* LoginNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNotificationView.swift; sourceTree = "<group>"; };
 		0EDE79112BAECB060042882B /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		516FE89E2BB15BD500FACEAE /* CartListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListCell.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		58C16F1D2BAD1EF400933273 /* AccountView */ = {
 			isa = PBXGroup;
 			children = (
+				0EA9370E2BB3F7C7000AA61D /* LoginState.swift */,
 				580163742BA7439B0050F057 /* ProfileView.swift */,
 				0EDE790F2BAEC5560042882B /* LoginNotificationView.swift */,
 			);
@@ -333,6 +336,7 @@
 				516FE89F2BB15BD500FACEAE /* CartListCell.swift in Sources */,
 				5811618A2BB0C2F900BEBCDD /* StringExt.swift in Sources */,
 				581161882BB0BF8700BEBCDD /* UserViewModel.swift in Sources */,
+				0EA9370F2BB3F7C7000AA61D /* LoginState.swift in Sources */,
 				58B0B74A2BA8CB2F007C2E74 /* Alert.swift in Sources */,
 				516FE8A12BB188F900FACEAE /* EmptyState.swift in Sources */,
 				580163712BA7435A0050F057 /* FavoriteView.swift in Sources */,

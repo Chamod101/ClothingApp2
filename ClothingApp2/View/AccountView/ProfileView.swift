@@ -19,6 +19,7 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationStack{
+    
             Form{
                 Section(header: Text("Personal Info")){
                     TextField("First Name", text: $viewModel.user.firstName)

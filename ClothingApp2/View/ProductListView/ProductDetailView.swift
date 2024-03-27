@@ -11,14 +11,17 @@ import SwiftUI
 
 struct ProductDetailView: View {
     
+    @State var alertItem: AlertItem?
     @EnvironmentObject var order: Order
+    @StateObject var userViewModel = UserViewModel()
+    @State private var showingAlert = false
+    @State var qty : Int = 1
     
-    let product: Product
+    var product: Product
     @Binding var isShowingDetails: Bool
     
     var body: some View {
         VStack{
-            
             
             ProductRemoteImage(urlString: product.imageURL)
                 .aspectRatio(contentMode: .fit)
@@ -50,30 +53,72 @@ struct ProductDetailView: View {
                         value: product.category)
                   
                 }
+                
+                VStack{
+                    HStack{
+                        Button(action: {
+                            qty+=1
+                        }, label: {
+                            Text("+")
+                        })
+                        .frame(width: 20, height: 20)
+                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                        .padding()
+                        
+                        
+                        Text("\(qty)")
+                        
+                        
+                        Button(action: {
+                           
+                            qty-=1
+                        }, label: {
+                            Text("-")
+                        })
+                        .disabled(qty<=1)
+                        .frame(width: 20, height: 20)
+                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                        .padding()
+                    }
             }
             
-            
+            }
             Spacer()
+            
             Button{
-                order.add(product)
-                isShowingDetails = false
+                
+                if !userViewModel.user.firstName.isEmpty{
+                    order.add(product)
+                    isShowingDetails = false
+                }
+                else{
+                    showingAlert = true
+                }
+                
             } label: {
-                ProductBtn(title: "$\(product.price, specifier: "%.2f") - Add to Cart")
+                ProductBtn(title: "$\(product.price * Double(qty), specifier: "%.2f") - Add to Cart")
             }
             .padding(.bottom,30)
         }
-        .frame(width: 300, height: 525)
+        .frame(width: 300, height: 600)
         .background(Color(.systemBackground))
         .cornerRadius(15)
         .shadow(radius: 40)
         .overlay(
             Button{
                 isShowingDetails = false
+                
             } label: {
                 DismissBtn()
             },
             alignment: .topTrailing
         )
+        .alert("Please create an account before this action", isPresented: $showingAlert) {
+                    Button("OK", role: .cancel) { }
+                }
+        .onAppear{
+            userViewModel.retrievUser()
+        }
     }
 }
 

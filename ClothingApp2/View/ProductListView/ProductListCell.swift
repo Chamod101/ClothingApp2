@@ -11,8 +11,12 @@ struct ProductListCell: View {
     
     let product: Product
     @EnvironmentObject var fav: Favorite
+    @StateObject var userViewModel = UserViewModel()
+    @State private var showingAlert = false
+    @State private var favClicked = false
     
     var body: some View {
+        
         VStack{
            
             ProductRemoteImage(urlString: product.imageURL)
@@ -34,15 +38,27 @@ struct ProductListCell: View {
             .padding(.leading)
             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         
+        }.alert("Please create an account before this action", isPresented: $showingAlert) {
+            Button("OK", role: .cancel) { }
         }
         .overlay(
             Button{
-                fav.add(product)
+                if !userViewModel.user.firstName.isEmpty{
+                    fav.add(product)
+                    favClicked = true
+                }
+                else {
+                    showingAlert = true
+                }
+                
             } label: {
                 FavBtn()
             },
             alignment: .topTrailing
         )
+        .onAppear{
+            userViewModel.retrievUser()
+        }
     }
 }
 
