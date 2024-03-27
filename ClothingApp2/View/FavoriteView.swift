@@ -10,17 +10,34 @@ import SwiftUI
 struct FavoriteView: View {
     
     @Binding var isDark : Bool
+    
+    @EnvironmentObject var fav: Favorite
 
     var body: some View {
-        ZStack{
-            if(isDark){
-                Color.black
-                    .ignoresSafeArea()
-            }else{
-                Color.white
-                    .ignoresSafeArea()
+        
+        NavigationStack{
+            ZStack{
+                VStack{
+                    List{
+                        ForEach(fav.favItems){product in
+                            CartListCell(product: product)
+                            
+                        }
+                        .onDelete(perform: fav.deleteItems)
+                                    
+                    }
+                    .listStyle(PlainListStyle())
+                  
+                }
+                
+                if fav.favItems.isEmpty{
+                    EmptyState(imageName: "favIcon", lable: "You have no favorite items yet")
+                }
             }
+            
+            .navigationTitle("Favorite")
         }
+        
     }
 }
 

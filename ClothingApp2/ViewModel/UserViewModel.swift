@@ -14,6 +14,7 @@ final class UserViewModel: ObservableObject {
     @Published var user = User()
     
     @Published var alertItem: AlertItem?
+    @State var userAvailable: Bool = false
     
     func saveChanges(){
         guard isValidForm else {return}
@@ -30,8 +31,11 @@ final class UserViewModel: ObservableObject {
     func retrievUser(){
         guard let userData = userData else {return}
         
+        print(userData)
+        
         do {
             user = try JSONDecoder().decode(User.self, from: userData)
+           
         } catch{
             alertItem = AlertContext.inavliduserData
         }

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B60E222A-DF0E-416C-B405-2B9D51138919"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B72DA17D-80A0-4B40-9770-49FB42CE710E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ClothingApp2/ViewModel/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "retrievUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B72DA17D-80A0-4B40-9770-49FB42CE710E - c22b532657460bb4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.retrievUser() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "B72DA17D-80A0-4B40-9770-49FB42CE710E - c22b532657460457"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.retrievUser() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6CB3E26-D9C0-48A6-925C-7A3FAD5BAA42"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ClothingApp2/ViewModel/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "retrievUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B6CB3E26-D9C0-48A6-925C-7A3FAD5BAA42 - c22b532657460bcb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.retrievUser() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "544">
+               </Location>
+               <Location
+                  uuid = "B6CB3E26-D9C0-48A6-925C-7A3FAD5BAA42 - c22b532657460b28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.retrievUser() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "584">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4147A6E-C72E-4D46-A6A6-D8D6C8F38967"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ClothingApp2/ViewModel/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "retrievUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A4147A6E-C72E-4D46-A6A6-D8D6C8F38967 - c22b532657460bcb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.retrievUser() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "544">
+               </Location>
+               <Location
+                  uuid = "A4147A6E-C72E-4D46-A6A6-D8D6C8F38967 - c22b532657460b95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.retrievUser() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "424">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E81ECCE3-F716-47F4-AC0E-D41E3DA1FD6B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ClothingApp2/ViewModel/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "saveChanges()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E81ECCE3-F716-47F4-AC0E-D41E3DA1FD6B - d2b069f49c262987"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.saveChanges() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "E81ECCE3-F716-47F4-AC0E-D41E3DA1FD6B - d2b069f49c262987"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.saveChanges() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "304">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "336A14AC-D2D5-4EC9-B2A4-98B3086560C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ClothingApp2/ViewModel/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "retrievUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE689FE0-E093-42AE-B09B-27C26F396367"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ClothingApp2/ViewModel/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "retrievUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "089515BE-2BA2-4EA9-A997-A6826C353306"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ClothingApp2/ViewModel/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "retrievUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FB17739-EEA0-405B-8614-E050125FEE63"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ClothingApp2/ViewModel/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "retrievUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9FB17739-EEA0-405B-8614-E050125FEE63 - c22b532657460b28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.retrievUser() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "672">
+               </Location>
+               <Location
+                  uuid = "9FB17739-EEA0-405B-8614-E050125FEE63 - c22b532657460b28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ClothingApp2.UserViewModel.retrievUser() -&gt; ()"
+                  moduleName = "ClothingApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nibm/Desktop/ClothingApp2/ClothingApp2/ViewModel/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "584">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

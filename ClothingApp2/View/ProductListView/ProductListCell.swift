@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductListCell: View {
     
     let product: Product
+    @EnvironmentObject var fav: Favorite
     
     var body: some View {
         VStack{
@@ -34,6 +35,14 @@ struct ProductListCell: View {
             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         
         }
+        .overlay(
+            Button{
+                fav.add(product)
+            } label: {
+                FavBtn()
+            },
+            alignment: .topTrailing
+        )
     }
 }
 

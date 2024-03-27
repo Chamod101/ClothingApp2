@@ -39,7 +39,7 @@ struct CartView: View {
                 }
                 
                 if order.items.isEmpty {
-                    EmptyState(imageName: "PlaceHolder", lable: "You have no items in your cart")
+                    EmptyState(imageName: "emptyCart", lable: "You have no items in your cart")
                 }
             }
             

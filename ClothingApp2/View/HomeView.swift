@@ -201,6 +201,16 @@ struct HomeView: View {
                 LoadingView()
             }
             
+            if userViewModel.userAvailable {
+                VStack{
+                    Text("user available")
+                }
+            }
+            else{
+                VStack{
+                    Text("user not available")
+                }
+            }
             
         }
     }

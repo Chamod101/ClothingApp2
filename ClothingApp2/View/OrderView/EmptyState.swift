@@ -21,10 +21,10 @@ struct EmptyState: View {
                 Image(imageName)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 190)
+                    .frame(width: 100, height: 100)
                 
                 Text(lable)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .font(.system(size: 20))
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.secondary)

@@ -10,6 +10,7 @@ import SwiftUI
 struct NavigationView: View {
     
     @EnvironmentObject var order: Order
+    @EnvironmentObject var fav: Favorite
     @State var selectedTab: Int = 0
     @State var isDark : Bool = false
     @State var name: String = ""
