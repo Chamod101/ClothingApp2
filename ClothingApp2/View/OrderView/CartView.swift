@@ -14,6 +14,8 @@ struct CartView: View {
     @Binding var isDark : Bool
     @Binding var name: String
     
+    @State var showCheckout : Bool = false
+    
     @EnvironmentObject var order: Order
     
     var body: some View {
@@ -33,7 +35,7 @@ struct CartView: View {
                     
                 
                     Button{
-                        
+                        showCheckout = true
                     } label: {
                         ProductBtn(title: "$\(order.totalPrice, specifier: "%.2f") - Confirm order")
                     }
@@ -49,12 +51,19 @@ struct CartView: View {
                     }
                 
                 
+                
+                
             }
+            
             .onAppear{
                 userViewModel.retrievUser()
             }
             .navigationTitle("Cart")
         }
+        
+        
+        
+        
         
         
         

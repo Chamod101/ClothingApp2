@@ -19,17 +19,13 @@ struct LoginState: View {
                     .scaledToFit()
                     .frame(width: 300, height: 300)
                 
-                Text("Please create an account ")
+                Text("Please create an account to get the personalized experience")
                     .font(.system(size: 20))
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.secondary)
                 
-                Button(action: {
-                    
-                }, label: {
-                    Text("Create Account")
-                })
+                
             }
             
         }

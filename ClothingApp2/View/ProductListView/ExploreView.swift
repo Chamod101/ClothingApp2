@@ -40,19 +40,20 @@ struct ExploreView: View {
 //                    .navigationTitle("Explore")
                 
                 
-                if !(selectedCategory == ""){
-                    HStack{
-                        Text("Category - \(selectedCategory)")
-                        Spacer()
-                        Button(action: {
-                            selectedCategory = ""
-                        }, label: {
-                            Text("Clear Filter")
-                        })
-                    }.padding()
-                }
+               
                 
                 ScrollView{
+                    if !(selectedCategory == ""){
+                        HStack{
+                            Text("Category - \(selectedCategory)")
+                            Spacer()
+                            Button(action: {
+                                selectedCategory = ""
+                            }, label: {
+                                Text("Clear Filter")
+                            })
+                        }.padding()
+                    }
                     LazyVGrid(columns:columns){
                         ForEach(filteredProducts, id: \.id){product in
                                             ProductListCell(product: product)
