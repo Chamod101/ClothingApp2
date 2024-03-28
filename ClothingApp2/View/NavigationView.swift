@@ -56,7 +56,7 @@ struct NavigationView: View {
                 }
                 .tag(4)
         }
-        .accentColor(isDark ? .white : .black)
+        .accentColor(.color4)
 
         
     }

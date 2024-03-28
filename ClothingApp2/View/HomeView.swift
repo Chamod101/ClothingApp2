@@ -33,9 +33,9 @@ struct HomeView: View {
                             .foregroundColor(.black)
                         Text("When")
                             .font(.system(size: 30, weight: .bold, design: .serif))
-                            .foregroundColor(.pink.opacity(0.80))
+                            .foregroundColor(Color("Color 4").opacity(0.80))
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Fashion Succeeds")
+                        Text("Fashion Succeeds ✨👕")
                             .font(.system(size: 30, weight: .light, design: .serif))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .foregroundColor(.black)
@@ -71,6 +71,7 @@ struct HomeView: View {
                                         .frame(width: 100, height: 40)
                                         .background(.secondary.opacity(0.1))
                                         .clipShape(RoundedRectangle(cornerRadius: 30))
+                                        .foregroundColor(Color("Color 4"))
                                         
                                     }
                                     .padding(.horizontal, 20)
@@ -81,7 +82,7 @@ struct HomeView: View {
                         
                         HStack {
                            Text("Best Selling")
-                               .font(.system(size: 24, weight: .semibold))
+                               .font(.system(size: 24, weight: .semibold, design: .serif))
                                .foregroundStyle(.black)
                                         
                             Spacer()
@@ -90,17 +91,17 @@ struct HomeView: View {
                                 selectedTab = 1
                             } label: {
                                 Text("View All")
-                                    .font(.system(size: 14, weight: .medium))
+                                    .font(.system(size: 14, weight: .medium, design: .serif))
                                     .foregroundStyle(.gray)
                             }
                                         
                             
                         }
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, 30)
                         .padding(.vertical, 10)
                                         
                          ScrollView(.horizontal, showsIndicators: false){
-                             LazyHStack(spacing: 5){
+                             LazyHStack(spacing: 10){
                                ForEach(viewModel.products.shuffled().prefix(4), id: \.id){product in
                                  ProductListCell(product: product)
                                    .onTapGesture {
@@ -109,15 +110,15 @@ struct HomeView: View {
                                            }
                                      }
                                }
-                                .frame(height: 200)
+                                .frame(height: 240)
                              }
-                            .padding(.horizontal, 20)
+                            .padding(.horizontal, 30)
                             .padding(.vertical, -20)
                         
                         
                         HStack {
                            Text("New Arrivals")
-                               .font(.system(size: 24, weight: .semibold))
+                               .font(.system(size: 24, weight: .semibold, design: .serif))
                                .foregroundStyle(.black)
                                         
                             Spacer()
@@ -126,15 +127,15 @@ struct HomeView: View {
                                 selectedTab = 1
                             } label: {
                                 Text("View All")
-                                    .font(.system(size: 14, weight: .medium))
+                                    .font(.system(size: 14, weight: .medium, design: .serif))
                                     .foregroundStyle(.gray)
                             }
                         }
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, 30)
                         .padding(.vertical, 10)
                                         
                          ScrollView(.horizontal, showsIndicators: false){
-                             LazyHStack(spacing: 5){
+                             LazyHStack(spacing: 10){
                                ForEach(viewModel.products.shuffled().prefix(4), id: \.id){product in
                                  ProductListCell(product: product)
                                    .onTapGesture {
@@ -143,14 +144,14 @@ struct HomeView: View {
                                            }
                                      }
                                }
-                                .frame(height: 200)
+                                .frame(height: 240)
                              }
-                            .padding(.horizontal, 20)
+                            .padding(.horizontal, 30)
                             .padding(.vertical, -20)
                         
                         HStack {
                            Text("Browse products")
-                               .font(.system(size: 24, weight: .semibold))
+                               .font(.system(size: 24, weight: .semibold, design: .serif))
                                .foregroundStyle(.black)
                                         
                             Spacer()
@@ -159,14 +160,14 @@ struct HomeView: View {
                                 selectedTab = 1
                             } label: {
                                 Text("View All")
-                                    .font(.system(size: 14, weight: .medium))
+                                    .font(.system(size: 14, weight: .medium, design: .serif))
                                     .foregroundStyle(.gray)
                             }
                         }
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, 30)
                         .padding(.vertical, 10)
                                         
-                        LazyVGrid(columns:columns){
+                        LazyVGrid(columns:columns, spacing: 25){
                              
                                ForEach(viewModel.products.shuffled().prefix(10), id: \.id){product in
                                  ProductListCell(product: product)
@@ -176,9 +177,9 @@ struct HomeView: View {
                                            }
                                      }
                                
-                                .frame(height: 200)
+                                .frame(height: 240)
                              }
-                            .padding(.horizontal, 20)
+                            .padding(.horizontal, 30)
                             .padding(.vertical, -20)
                         
                     }

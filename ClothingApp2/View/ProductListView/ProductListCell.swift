@@ -23,43 +23,71 @@ struct ProductListCell: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 90, alignment: .center)
                 .cornerRadius(8)
+                .scaledToFit()
             
             VStack(alignment: .leading, spacing: 5){
                 Text(product.name)
                     .font(.system(size: 15))
                     .fontWeight(.medium)
-                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                Text("$\(product.price,specifier: "%.2f")")
-                    .foregroundStyle(.secondary)
-                    .fontWeight(.semibold)
-                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-
-            }
-            .padding(.leading)
-            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-        
-        }.alert("Please create an account before this action", isPresented: $showingAlert) {
-            Button("OK", role: .cancel) { }
-        }
-        .overlay(
-            Button{
-                if !userViewModel.user.firstName.isEmpty{
-                    fav.add(product)
-                    favClicked = true
-                }
-                else {
-                    showingAlert = true
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                HStack {
+                    Text("$\(product.price,specifier: "%.2f")")
+                        .foregroundStyle(.secondary)
+                        .fontWeight(.semibold)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    
+                    Button{
+                        if !userViewModel.user.firstName.isEmpty{
+                            fav.add(product)
+                            favClicked = true
+                        }
+                        else {
+                            showingAlert = true
+                        }
+                        
+                    } label: {
+                        FavBtn()
+                    }
                 }
                 
-            } label: {
-                FavBtn()
-            },
-            alignment: .topTrailing
-        )
+
+            }
+            .padding(.leading, 15)
+            .padding(.trailing,15)
+//            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            
+        
+        }
+        
+        .alert("Please create an account before this action", isPresented: $showingAlert) {
+            Button("OK", role: .cancel) { }
+        }
+//        .overlay(
+//            Button{
+//                if !userViewModel.user.firstName.isEmpty{
+//                    fav.add(product)
+//                    favClicked = true
+//                }
+//                else {
+//                    showingAlert = true
+//                }
+//                
+//            } label: {
+//                FavBtn()
+//            },
+//            alignment: .topTrailing
+//        )
         .onAppear{
             userViewModel.retrievUser()
         }
+        
+        .frame(width: 160, height: 200)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.color1, lineWidth: 1)
+                    )
     }
+    
 }
 
 #Preview {

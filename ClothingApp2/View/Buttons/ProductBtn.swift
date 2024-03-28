@@ -17,7 +17,7 @@ struct ProductBtn: View {
             .fontWeight(.semibold)
             .frame(width: 240, height: 50)
             .foregroundColor(.white)
-            .background(.blue)
+            .background(.color3)
             .cornerRadius(10)
     }
 }

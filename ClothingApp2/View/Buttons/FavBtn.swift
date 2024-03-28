@@ -13,15 +13,16 @@ struct FavBtn: View {
                 ZStack{
                     Circle()
                         .frame(width: 30, height: 30)
-                        .foregroundColor(.favColour)
+                        .foregroundColor(.color2)
                         .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
                     
                     Image(systemName: "heart")
-                        .imageScale(.small)
-                        .frame(width: 44, height: 44)
-                        .foregroundColor(.black)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 15, height: 15)
+                        .accentColor(.white)
                 }
-                .padding(.top, -20)
+//                .padding(.top, -20)
             
     }
 }

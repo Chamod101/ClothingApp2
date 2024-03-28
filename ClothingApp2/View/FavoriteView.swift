@@ -36,7 +36,7 @@ struct FavoriteView: View {
                     
                 }
                 else if fav.favItems.isEmpty{
-                    EmptyState(imageName: "favIcon", lable: "You have no favorite items yet")
+                    EmptyState(imageName: "favorite image", lable: "You have no favorite items yet")
                 }
             }
             .onAppear{
