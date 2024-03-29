@@ -30,12 +30,12 @@ struct ProductDetailView: View {
             ScrollView{
                 VStack{
                     Text(product.name)
-                        .font(.title2)
+                        .font(.system(size: 28, weight: .medium, design: .serif))
                         .fontWeight(.semibold)
                     
                     Text(product.description)
                         .multilineTextAlignment(.center)
-                        .font(.body)
+                        .font(.system(size: 17, weight: .light, design: .serif))
                         .padding()
                 }
                 
@@ -52,35 +52,52 @@ struct ProductDetailView: View {
                         title: "Category",
                         value: product.category)
                   
+                }.font(.system(size: 16, weight: .light, design: .serif))
+                
+                Spacer()
+                
+                HStack{
+                    VStack{
+                        HStack (spacing: 2) {
+                                           ForEach(0..<5) { item in
+                                               Image(systemName: "star.fill")
+                                                   .foregroundColor(.yellow)
+                                               }
+                                           }
+                    }.padding(.top ,10)
+                    
+                    VStack{
+                        HStack{
+                            Button(action: {
+                                qty+=1
+                            }, label: {
+                                Text("+")
+                            })
+                            .frame(width: 20, height: 20)
+                            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                            .padding()
+                            
+                            
+                            Text("\(qty)")
+                            
+                            
+                            Button(action: {
+                               
+                                qty-=1
+                            }, label: {
+                                Text("-")
+                            })
+                            .disabled(qty<=1)
+                            .frame(width: 20, height: 20)
+                            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                            .padding()
+                        }
+                }
                 }
                 
-                VStack{
-                    HStack{
-                        Button(action: {
-                            qty+=1
-                        }, label: {
-                            Text("+")
-                        })
-                        .frame(width: 20, height: 20)
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
-                        .padding()
-                        
-                        
-                        Text("\(qty)")
-                        
-                        
-                        Button(action: {
-                           
-                            qty-=1
-                        }, label: {
-                            Text("-")
-                        })
-                        .disabled(qty<=1)
-                        .frame(width: 20, height: 20)
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
-                        .padding()
-                    }
-            }
+                
+                
+            
             
             }
             Spacer()

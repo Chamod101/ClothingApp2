@@ -13,7 +13,7 @@ struct ProductBtn: View {
     
     var body: some View {
         Text(title)
-            .font(.title3)
+            .font(.system(size: 18, weight: .medium, design: .serif))
             .fontWeight(.semibold)
             .frame(width: 240, height: 50)
             .foregroundColor(.white)

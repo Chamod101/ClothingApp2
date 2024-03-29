@@ -27,7 +27,7 @@ struct ProductListCell: View {
             
             VStack(alignment: .leading, spacing: 5){
                 Text(product.name)
-                    .font(.system(size: 15))
+                    .font(.system(size: 15, weight: .medium, design: .serif))
                     .fontWeight(.medium)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 HStack {

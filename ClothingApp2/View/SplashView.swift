@@ -24,17 +24,13 @@ struct SplashView: View {
         else{
             VStack{
                 ZStack{
-                    Color(.black)
+                    Color(.color4)
                         .ignoresSafeArea()
                     
                     VStack{
-                        Image(systemName: "hare.fill")
+                        Image("logopng")
                             .font(.system(size: 80))
-                            .foregroundColor(.white)
                         
-                        Text("Shopy fly")
-                            .font(Font.custom("Baskerville-Bold", size: 26))
-                            .foregroundColor(.white)
                     }
                     .scaleEffect(size)
                     .opacity(opacity)

@@ -21,9 +21,13 @@ struct CartListCell: View {
             
             VStack(alignment: .leading, spacing: 5){
                 Text(product.name)
-                    .font(.system(size: 15))
-                    .fontWeight(.medium)
+                    .font(.system(size: 15, weight: .medium, design: .serif))
+                    .fontWeight(.bold)
                     .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Text("Category - \(product.category)")
+                    .font(.system(size: 13, weight: .medium, design: .serif))
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.secondary)
                 Text("$\(product.price,specifier: "%.2f")")
                     .foregroundStyle(.secondary)
                     .fontWeight(.semibold)

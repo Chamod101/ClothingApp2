@@ -32,14 +32,15 @@ struct CartView: View {
                                     
                     }
                     .listStyle(PlainListStyle())
-                    
+                    .disabled(showCheckout)
                 
                     Button{
                         showCheckout = true
                     } label: {
-                        ProductBtn(title: "$\(order.totalPrice, specifier: "%.2f") - Confirm order")
+                        ProductBtn(title: "$\(order.totalPrice, specifier: "%.2f") - Checkout")
                     }
                     .padding(.bottom, 25)
+                    .disabled(showCheckout)
                 }
                 if userViewModel.user.firstName.isEmpty{
                    LoginState()
@@ -50,7 +51,9 @@ struct CartView: View {
                         EmptyState(imageName: "cart image", lable: "You have no items in your cart")
                     }
                 
-                
+                if showCheckout {
+                    CheckOutView(checkOut: $showCheckout)
+                }
                 
                 
             }

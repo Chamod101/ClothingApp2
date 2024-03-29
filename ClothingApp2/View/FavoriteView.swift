@@ -22,12 +22,12 @@ struct FavoriteView: View {
                     List{
                         ForEach(fav.favItems){product in
                             CartListCell(product: product)
-                            
+                        
                         }
                         .onDelete(perform: fav.deleteItems)
                                     
                     }
-                    .listStyle(PlainListStyle())
+                    
                   
                 }
                 
