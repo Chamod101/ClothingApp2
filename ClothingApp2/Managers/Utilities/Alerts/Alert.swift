@@ -66,4 +66,9 @@ struct AlertContext {
         title: Text("Profile Error"),
         message: Text("Please create an account beforethis acction"),
         dismissButton: .default(Text("OK")))
+    
+    static let CannotSave = AlertItem(
+        title: Text("Favorite Item Error"),
+        message: Text("There is a issue with updating your favorite list"),
+        dismissButton: .default(Text("OK")))
 }

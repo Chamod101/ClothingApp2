@@ -60,6 +60,7 @@ struct CartView: View {
             
             .onAppear{
                 userViewModel.retrievUser()
+                order.retrieveOrder()
             }
             .navigationTitle("Cart")
         }

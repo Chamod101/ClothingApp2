@@ -41,6 +41,7 @@ struct FavoriteView: View {
             }
             .onAppear{
                 userViewModel.retrievUser()
+                fav.retrieveFavorites()
             }
             .navigationTitle("Favorite")
         }
