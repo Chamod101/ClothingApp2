@@ -18,7 +18,7 @@ struct ProductBtn: View {
             .frame(width: 240, height: 50)
             .foregroundColor(.white)
             .background(.color3)
-            .cornerRadius(10)
+            .cornerRadius(50)
     }
 }
 

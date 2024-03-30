@@ -74,7 +74,6 @@ struct CheckOutView: View {
                         .padding(.vertical, 8)
                                            
                         }
-                    Divider()
                     HStack{
                         Text("Total")
                         .font(.system(size: 16, weight: .semibold))
@@ -91,8 +90,6 @@ struct CheckOutView: View {
                            .padding(.vertical, 8)
                                               
                            }
-                    Divider()
-                    Divider()
                     
                 }
                 .padding()
@@ -204,9 +201,9 @@ struct CheckOutView: View {
                    Text("Place Order")
                        .padding()
                        .padding(.horizontal)
-                       .frame(width: 200, height: 30)
+                       .frame(width: 200, height: 50)
                        .background(Color(.color4))
-                       .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                       .cornerRadius(50)
                        .foregroundColor(.white)
                        .font(.system(size: 15, weight: .medium, design: .serif))
                    })

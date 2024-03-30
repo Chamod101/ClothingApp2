@@ -19,6 +19,8 @@ struct CartListCell: View {
                 .frame(width: 120, height: 90, alignment: .center)
                 .cornerRadius(8)
             
+            Spacer()
+            
             VStack(alignment: .leading, spacing: 5){
                 Text(product.name)
                     .font(.system(size: 15, weight: .medium, design: .serif))
@@ -34,10 +36,13 @@ struct CartListCell: View {
                     .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
 
             }
-            .padding(.leading)
-            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            Spacer()
+                .padding(.horizontal)
+            
         
         }
+        .padding(15)
+        .padding(.leading)
     }
 }
 

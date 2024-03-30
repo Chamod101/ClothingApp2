@@ -47,8 +47,20 @@ struct HomeView: View {
                 .padding()
                 
                 NavigationStack{
+                    
             
                     ScrollView{
+                        ZStack(alignment: .bottomLeading) {
+                            ZStack(alignment: .trailing) {
+                                Image("home banner")
+                                    .resizable()
+                //                    .frame(width: .infinity, height: 180)
+                                    .scaledToFit()
+                            }
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 10)
+                        }
+                        
                         HStack {
                                                     
                             ScrollView(.horizontal, showsIndicators: false) {

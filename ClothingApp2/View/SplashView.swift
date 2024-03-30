@@ -24,12 +24,16 @@ struct SplashView: View {
         else{
             VStack{
                 ZStack{
-                    Color(.color4)
+                    Image("Splash Screen")
+                        .resizable()
+                        .scaledToFill()
                         .ignoresSafeArea()
                     
                     VStack{
-                        Image("logopng")
-                            .font(.system(size: 80))
+                        Image("logo")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 400, height: 400)
                         
                     }
                     .scaleEffect(size)

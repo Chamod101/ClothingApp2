@@ -28,31 +28,52 @@ struct ProductDetailView: View {
                 .frame(width: 300, height: 270)
             
             ScrollView{
-                VStack{
-                    Text(product.name)
-                        .font(.system(size: 28, weight: .medium, design: .serif))
-                        .fontWeight(.semibold)
+                VStack(alignment: .leading){
+                    HStack {
+                        Text(product.name)
+                            .font(.system(size: 16, weight: .medium, design: .serif))
+                            .fontWeight(.semibold)
+                        
+                        
+                    }
+                    .padding(.horizontal)
+                   
                     
                     Text(product.description)
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 17, weight: .light, design: .serif))
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 13, weight: .light, design: .serif))
                         .padding()
+                    
+                }
+                VStack(alignment: .leading){
+                    HStack{
+                        VStack(alignment: .leading){
+                            ProductCountDetails(
+                                title: "Colour",
+                                value: product.colour)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, -10)
+                        
+                        VStack{
+                            ProductCountDetails(
+                                title: "Size",
+                                value: product.size)
+                        }
+                        .padding(.horizontal)
+                        Spacer()
+                    }
+                    VStack(alignment: .leading){
+                        ProductCountDetails(
+                            title: "Category",
+                            value: product.category)
+                    }
+                    .padding(.horizontal)
+                    
                 }
                 
-                HStack(spacing: 40){
-                    ProductCountDetails(
-                        title: "Colour",
-                        value: product.colour)
-                   
-                    ProductCountDetails(
-                        title: "Size",
-                        value: product.size)
-                    
-                    ProductCountDetails(
-                        title: "Category",
-                        value: product.category)
-                  
-                }.font(.system(size: 16, weight: .light, design: .serif))
+                
+                .font(.system(size: 16, weight: .light, design: .serif))
                 
                 Spacer()
                 
@@ -64,7 +85,11 @@ struct ProductDetailView: View {
                                                    .foregroundColor(.yellow)
                                                }
                                            }
+                        .padding(.horizontal)
+                        
                     }.padding(.top ,10)
+                    
+                    Spacer()
                     
                     VStack{
                         HStack{
@@ -73,9 +98,10 @@ struct ProductDetailView: View {
                             }, label: {
                                 Text("+")
                             })
-                            .frame(width: 20, height: 20)
-                            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
-                            .padding()
+                            .frame(width: 30, height: 30)
+                                                            .overlay(RoundedRectangle(cornerRadius: 50).stroke())
+                                                            .foregroundColor(.gray)
+                                        
                             
                             
                             Text("\(qty)")
@@ -88,11 +114,13 @@ struct ProductDetailView: View {
                                 Text("-")
                             })
                             .disabled(qty<=1)
-                            .frame(width: 20, height: 20)
-                            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
-                            .padding()
+                            .frame(width: 30, height: 30)
+                                                            .overlay(RoundedRectangle(cornerRadius: 50).stroke())
+                                                            .foregroundColor(.gray)
+                                        
                         }
                 }
+                    .padding(.horizontal)
                 }
                 
                 
@@ -116,7 +144,10 @@ struct ProductDetailView: View {
                 ProductBtn(title: "$\(product.price * Double(qty), specifier: "%.2f") - Add to Cart")
             }
             .padding(.bottom,30)
+            .padding(.horizontal)
         }
+        
+        
         .frame(width: 300, height: 600)
         .background(Color(.systemBackground))
         .cornerRadius(15)
